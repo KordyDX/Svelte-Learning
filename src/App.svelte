@@ -7,10 +7,19 @@
   let src = "./src/assets/alien.png";
   let kokot = "<p><b>Kokot</b></p>";
   let count = 0;
-  $: doubled = count * 2;
-	function increment() {
+  $: doubled = count * count;
+  /*$: if (count >= 10) {
+		alert('Count is dangerously high!');
+		count = 0;
+	}*/
+  $: console.log(`the count is ${count}`);
+  function increment() {
 		count += 1;
 	}
+
+  let months = ['Jan', 'March', 'April', 'June'];
+  months.splice(1, 0, 'Feb');
+  console.log(months);
 </script>
 
 <html lang="en">
@@ -24,6 +33,7 @@
       Clicked {count}
       {count === 1 ? "time" : "times"}
     </button>
+    <p>{count} squared is {doubled}</p>
   </body>
 </html>
 
